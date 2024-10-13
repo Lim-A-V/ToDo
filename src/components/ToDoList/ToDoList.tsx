@@ -1,8 +1,19 @@
 import { ToDoListItem } from "./ToDoListItem/ToDoListItem"
 import './ToDoList.scss'
 import { ToDo } from "../../models/todo-item"
+import { useEffect } from "react";
 
 export const TodoList = (props: { todos: ToDo[], updateToDo: Function, deleteToDo: Function }) => {
+
+   const countTask = props.todos.length;
+
+   useEffect(() => {
+      const element = document.getElementById('box');
+      if (element) {
+         element.textContent = `${countTask}`;
+         localStorage.countTasks = `${countTask}`;
+      }
+   });
 
    const checkedList = (flag: boolean) => {
       return props.todos

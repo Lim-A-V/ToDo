@@ -10,6 +10,7 @@
 }
 
 .container {
+   position: relative;
    max-width: 97%;
    width: 100%;
    margin: 0 auto;
@@ -22,7 +23,33 @@
    text-decoration: none;
    padding: 10px;
    color: #fff;
+   font-size: 16px;
+   font-weight: 400;
 }
+
 .active {
    color: #ffffff33;
+}
+
+.numTasks {
+   position: absolute;
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   right: 5px;
+   color: #fff;
+   font-size: 16px;
+   font-weight: 400;
+}
+
+.numTasks span {
+   width: 40px;
+   height: 40px;
+   background-color: #000;
+   border-radius: 50%;
+   color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 600;
 }
