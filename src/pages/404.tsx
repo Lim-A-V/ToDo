@@ -18,7 +18,7 @@ export const NotFound = () => {
          <Helmet>
             <title>404 страница</title>
          </Helmet>
-         <Header count={false}/>
+         <Header countHide={false}/>
          <div className="error404 container">
             <div className="error404_img-content">
                <img className="error404_img-content__img" src="/img/404.png" alt="404" />

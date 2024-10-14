@@ -2,14 +2,13 @@ import { useEffect } from "react";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { ToDo } from "../models/todo-item";
 import { ListItem } from "../components/ListItem/ListItem";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
-interface ComponentProps {
-   todos: ToDo[]
-}
-
-export const HomePage = ({ todos }: ComponentProps) => {
+export const ViewList = () => {
 
    const countTask = localStorage.countTasks;
+   const todoList = useSelector((state: RootState) => state.todoList.todos)
 
    useEffect(() => {
       const element = document.getElementById('box');
@@ -26,7 +25,7 @@ export const HomePage = ({ todos }: ComponentProps) => {
             </Helmet>
             <div className="container">
                {
-                  todos.map((todo: ToDo, idx: number) => {
+                  todoList.map((todo: ToDo, idx: number) => {
                      return (<ListItem todo={todo} key={idx} />)
                   })
                }

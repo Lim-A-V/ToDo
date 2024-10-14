@@ -28,13 +28,14 @@
 }
 
 .active {
-   color: #ffffff33;
+   text-decoration: underline;
+   filter: drop-shadow(3px 3px 2px black);
 }
 
 .numTasks {
    position: absolute;
    display: flex;
-   gap: 10px;
+   gap: 4px;
    align-items: center;
    right: 5px;
    color: #fff;
@@ -45,11 +46,18 @@
 .numTasks span {
    width: 40px;
    height: 40px;
-   background-color: #000;
    border-radius: 50%;
    color: #fff;
    display: flex;
    align-items: center;
    justify-content: center;
    font-weight: 600;
+}
+
+.todosTrue {
+   background-color: green;
+}
+
+.todosFalse {
+   background-color: #9e0000;
 }
