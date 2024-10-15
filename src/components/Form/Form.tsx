@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import './Form.scss'
 import { useDispatch } from 'react-redux';
 import { inpuitNameAction } from '../../faeture/form';
+import { FormBlock, FormControl, FormField, FormLabel, FormWrapper } from './Form.styled';
+
+import plusIcon from '../../assets/images/plus.png';
 
 export const Form = (proms: {craeteNewToDo: Function }) => {
 
@@ -23,17 +25,17 @@ export const Form = (proms: {craeteNewToDo: Function }) => {
    }
 
    return (
-      <div className="form-wrapper">
-         <form action="#" onSubmit={formSubmit}>
-            <label>
-               <input
+      <FormWrapper>
+         <FormBlock action="#" onSubmit={formSubmit}>
+            <FormLabel>
+               <FormField
                   value={text}
                   type="text"
                   onChange={(event) => inputText(event.target.value)}
                />
-               <button></button>
-            </label>
-         </form>
-      </div>
+               <FormControl icon={plusIcon}/>
+            </FormLabel>
+         </FormBlock>
+      </FormWrapper>
    )
 }

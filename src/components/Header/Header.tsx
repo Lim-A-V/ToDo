@@ -1,13 +1,14 @@
 import { NavLink } from 'react-router-dom';
-import headerClass from './Header.module.scss';
 import { RootState } from '../../store';
 import { useSelector } from 'react-redux';
 
+import { HeaderContainer, HeaderLink, HeaderNumTasks, HeaderSite, HeaderTodos } from './Header.styled';
+
 export const Header = ({ countHide }: { countHide: boolean }) => {
 
-   const getActive = ({ isActive }: { isActive: boolean }): string => {
-      return isActive ? `${headerClass.link} ${headerClass.active}` : headerClass.link
-   }
+   // const getActive = ({ isActive }: { isActive: boolean }): string => {
+   //    return isActive ? `${HeaderLink} ${HeaderLinkActive}` : HeaderLink
+   // }
 
    const todoList = useSelector((state: RootState) => state.todoList.todos) // получение данных из стора Redux
 
@@ -16,12 +17,16 @@ export const Header = ({ countHide }: { countHide: boolean }) => {
    const todosFlase = todoList.length - newTodos.length;
 
    return (
-      <header className={headerClass.header}>
-         <div className={headerClass.container}>
-            <NavLink to="/" className={getActive}>ToDo</NavLink>
-            <NavLink to="/list" className={getActive}>Список задач</NavLink>
-            {(countHide) ? <div className={headerClass.numTasks} id="count-wrapper">Задачи: <span className={headerClass.todosFalse}>{todosFlase}</span>/<span className={headerClass.todosTrue}>{todosTrue}</span></div> : null}
-         </div>
-      </header>
+      <HeaderSite>
+         <HeaderContainer>
+            <NavLink to="/">
+               <HeaderLink>ToDo</HeaderLink>
+            </NavLink>
+            <NavLink to="/list">
+               <HeaderLink>Список задач</HeaderLink>
+            </NavLink>
+            {(countHide) ? <HeaderNumTasks id="count-wrapper">Задачи: <HeaderTodos color='#9e0000'>{todosFlase}</HeaderTodos>/<HeaderTodos color='green'>{todosTrue}</HeaderTodos></HeaderNumTasks> : null}
+         </HeaderContainer>
+      </HeaderSite>
    )
 }

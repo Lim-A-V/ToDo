@@ -1,7 +1,7 @@
 import { ToDoListItem } from "./ToDoListItem/ToDoListItem"
-import './ToDoList.scss'
 import { ToDo } from "../../models/todo-item"
 import { useEffect } from "react";
+import { ToDoContainer, ToDoList } from './ToDoList.styled';
 
 export const TodoList = (props: { todos: ToDo[], updateToDo: Function, deleteToDo: Function }) => {
 
@@ -30,13 +30,13 @@ export const TodoList = (props: { todos: ToDo[], updateToDo: Function, deleteToD
    }
 
    return (
-      <div className="todo-container">
-         <ul className="todo-list failed">
+      <ToDoContainer>
+         <ToDoList className="failed">
             {checkedList(false)}
-         </ul>
-         <ul className="todo-list completed">
+         </ToDoList>
+         <ToDoList className="completed">
             {checkedList(true)}
-         </ul>
-      </div>
+         </ToDoList>
+      </ToDoContainer>
    )
 }
