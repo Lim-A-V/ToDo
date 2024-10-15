@@ -20,7 +20,7 @@ export const Header = ({ countHide }: { countHide: boolean }) => {
          <div className={headerClass.container}>
             <NavLink to="/" className={getActive}>ToDo</NavLink>
             <NavLink to="/list" className={getActive}>Список задач</NavLink>
-            {(countHide) ? <div className={headerClass.numTasks} id="count-wrapper">Задачи: <span className={headerClass.todosTrue}>{todosTrue}</span>/<span className={headerClass.todosFalse}>{todosFlase}</span></div> : null}
+            {(countHide) ? <div className={headerClass.numTasks} id="count-wrapper">Задачи: <span className={headerClass.todosFalse}>{todosFlase}</span>/<span className={headerClass.todosTrue}>{todosTrue}</span></div> : null}
          </div>
       </header>
    )
