@@ -19,9 +19,24 @@ export const ToDoItem = styled.li`
    padding: 14px;
    word-break: break-word;
 
+   transition: .3s;
+   animation: сreation .3s ease;
+   animation-iteration-count: 1;
+
+   @keyframes сreation {
+      0% {
+        scale: 0;
+      }
+
+      100% {
+         scale: 1;
+      }
+   }
+
    &:last-child {
       margin: 0;
    }
+   
 `
 export const ToDoItemText = styled.span``
 
@@ -35,7 +50,7 @@ export const ToDoItemConrtols = styled.div`
    right: 0;
 `
 
-export const ToDoItemButton = styled.button<{icon: string}>`
+export const ToDoItemButton = styled.button<{ $icon: string }>`
    width: 50px;
    height: 50px;
    background-color: transparent;
@@ -46,17 +61,23 @@ export const ToDoItemButton = styled.button<{icon: string}>`
    box-shadow: none;
    outline: none;
    cursor: pointer;
+   transition: .3s;
 
-   background-image: url(${(props) => props.icon});
+   background-image: url(${(props) => props.$icon});
 
-   &:before {
-      content: '';
-      width: 1px;
-      height: 30px;
-      background: #edf0f1;
+   // &:before {
+   //    content: '';
+   //    width: 1px;
+   //    height: 30px;
+   //    background: #edf0f1;
 
-      position: absolute;
-      top: 10px;
-      left: 0;
+   //    position: absolute;
+   //    top: 10px;
+   //    left: 0;
+   // }
+
+   &:hover {
+      scale: 1.1;
+      filter: drop-shadow(1px 3px 2px #333);
    }
 `

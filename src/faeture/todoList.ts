@@ -2,6 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { ToDo } from '../models/todo-item'
+import { v4 as uuid} from 'uuid'
 
 // описываем типы данных в редьюсере
 export interface ToDoState {
@@ -22,7 +23,7 @@ export const todoSlice = createSlice({
    reducers: { // мутаторы состояния, которые получают доступ к данным (state) и изменяют их
       craeteAction: (state, action: PayloadAction<string>) => { //action - аргументы передаваемые из вне
          const newToDo: ToDo = {
-            id: state.todos.length,
+            id: uuid(),
             text: action.payload, // если не один аргумент, то action.payload.ИМЯ_АРГУМЕНТА
             isDone: false
          }

@@ -1,12 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import todoReducer from './faeture/todoList'
 import formReducer from './faeture/form'
+import themeReducer from './faeture/themeList'
+
 import { loadFromLocalStorage, saveToLocalStorage } from './helpers/storage'
 
 export const store = configureStore({
    reducer: {
       todoList: todoReducer,
       form: formReducer,
+      themeList: themeReducer
    },
    preloadedState: loadFromLocalStorage() // опциональный параметр, задающий начальное состояние хранилища
 })

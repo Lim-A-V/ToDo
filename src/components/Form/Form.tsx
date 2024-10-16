@@ -33,7 +33,7 @@ export const Form = (proms: {craeteNewToDo: Function }) => {
                   type="text"
                   onChange={(event) => inputText(event.target.value)}
                />
-               <FormControl icon={plusIcon}/>
+               <FormControl $icon={plusIcon}/>
             </FormLabel>
          </FormBlock>
       </FormWrapper>

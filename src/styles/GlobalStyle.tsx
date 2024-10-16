@@ -3,6 +3,7 @@ import normalize from "styled-normalize";
 
 export const GlobalStyle = createGlobalStyle`
    ${normalize}
+   
    * {
       box-sizing: border-box;
    }
@@ -10,7 +11,8 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: none
    }
    body {
-      background-color: #edf0f1;
+      transition: background-color .3s;
+      background-color: ${({ theme }) => theme.colors.backgroudSecondary};
       padding: 50px 0 0 0;
       font-family: 'Roboto', sans-serif;
       font-size: 16px;
@@ -23,6 +25,21 @@ export const GlobalStyle = createGlobalStyle`
       flex-direction: column;
       align-items: center;
       padding: 20px;
+   }
+
+   .list-item-wrapper {
+      gap: 10px;
+      width: 100%;
+      text-align: center;
+      border-radius: 4px;
+   }
+
+   .list-item-wrapper a{
+      width: 100%;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 1px 2px rgba(44, 62, 80, 0.10);
    }
 
    .hide {

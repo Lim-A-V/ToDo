@@ -11,12 +11,12 @@ export const ToDoListItem = (props: { toDoItem: ToDo, updateToDo: Function, dele
          <ToDoItemText>{props.toDoItem.text}</ToDoItemText>
          <ToDoItemConrtols>
             <ToDoItemButton
-               icon={trashIcon}
+               $icon={trashIcon}
                onClick={() => props.deleteToDo(props.toDoItem)}
                >
             </ToDoItemButton>
             <ToDoItemButton
-               icon={props.toDoItem.isDone ? checkIcon : unCheckIcon}
+               $icon={props.toDoItem.isDone ? checkIcon : unCheckIcon}
                onClick={() => props.updateToDo(props.toDoItem)}
                >
             </ToDoItemButton>

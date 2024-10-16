@@ -19,17 +19,17 @@ export const ViewList = () => {
    });
 
    return (
-         <HelmetProvider>
-            <Helmet>
-               <title>Главная страница</title>
-            </Helmet>
-            <div className="container">
-               {
-                  todoList.map((todo: ToDo, idx: number) => {
-                     return (<ListItem todo={todo} key={idx} />)
-                  })
-               }
-            </div>
-         </HelmetProvider>
+      <HelmetProvider>
+         <Helmet>
+            <title>Главная страница</title>
+         </Helmet>
+         <div className="container list-item-wrapper">
+            {
+               todoList.map((todo: ToDo) => {
+                  return (<ListItem todo={todo} key={todo.id} />)
+               })
+            }
+         </div>
+      </HelmetProvider>
    )
 }

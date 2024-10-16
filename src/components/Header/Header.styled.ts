@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderSite = styled.header`
@@ -6,7 +7,8 @@ export const HeaderSite = styled.header`
    right: 0;
    left: 0;
    height: 50px;
-   background-color: #4682b4;
+   transition: background-color .3s;
+   background-color: ${({theme}) => theme.colors.backgroudPrimery};
    display: flex;
    align-items: center;
 `
@@ -19,18 +21,26 @@ export const HeaderContainer = styled.div`
    display: flex;
    align-items: center;
    justify-content: center;
-
-   .active span {
-      text-decoration: underline;
-      filter: drop-shadow(3px 3px 2px black);
-   }
 `
-export const HeaderLink = styled.span`
+export const HeaderLink = styled(NavLink)`
    padding: 10px;
    color: #fff;
    font-size: 16px;
    font-weight: 400;
+
+   &.active {
+      text-decoration: underline;
+      filter: ${({theme}) => theme.colors.linkDropShadow};
+   }
 `
+
+export const HeaderToggleBtn = styled.button`
+   position: absolute;
+   left: 0;
+   padding: 5px 20px;
+   color: blue;
+`
+
 export const HeaderNumTasks = styled.div`
    position: absolute;
    display: flex;
