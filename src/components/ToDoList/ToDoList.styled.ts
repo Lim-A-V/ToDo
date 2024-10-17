@@ -9,6 +9,10 @@ export const ToDoContainer = styled.ul`
       padding: 60px 0 0 0;
    }
 
+   & li {
+      color: ${({theme}) => theme.colors.colorText}
+   }
+
    & .failed li {
       border: 1px solid #9e0000;
       background: #ff000030;

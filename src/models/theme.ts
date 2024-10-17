@@ -3,7 +3,8 @@ export interface Theme {
    colors: {
       backgroudPrimery: string,
       backgroudSecondary: string
-      linkDropShadow: string
+      linkDropShadow: string,
+      colorText: string,
    }
 }
 

@@ -5,7 +5,8 @@ const light: Theme = {
    colors: {
       backgroudPrimery: '#4682b4',
       backgroudSecondary: '#edf0f1',
-      linkDropShadow: 'drop-shadow(3px 3px 2px black)'
+      linkDropShadow: 'drop-shadow(3px 3px 2px black)',
+      colorText: '#000',
    }
 }
 const dark: Theme = {
@@ -13,7 +14,8 @@ const dark: Theme = {
    colors: {
       backgroudPrimery: 'black',
       backgroudSecondary: '#474747',
-      linkDropShadow: 'drop-shadow(3px 2px 3px #ccc)'
+      linkDropShadow: 'drop-shadow(3px 2px 3px #ccc)',
+      colorText: '#fff',
    }
 }
  
