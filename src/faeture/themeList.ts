@@ -2,6 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Theme } from '../models/theme'
 import { themes } from '../styles/themes'
+import type { PayloadAction } from '@reduxjs/toolkit'
 
 // описываем типы данных в редьюсере
 export interface ThemeState {
@@ -17,9 +18,10 @@ export const themeSlice = createSlice({
    name: 'themeList',
    initialState,
    reducers: { // мутаторы состояния, которые получают доступ к данным (state) и изменяют их
-      toggleThemeAction: (state) => {
-         state.theme = state.theme.name === 'light' ? themes['dark'] : themes['light'] 
-         console.log('toggleThemeAction')
+      toggleThemeAction: (state, action: PayloadAction<boolean>) => {
+         state.theme = action.payload ? themes['dark'] : themes['light'] 
+         // state.theme = state.theme.name === 'light' ? themes['dark'] : themes['light'] 
+         console.log(action.payload);
       },
    },
 })

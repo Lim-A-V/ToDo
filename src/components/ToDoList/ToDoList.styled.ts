@@ -1,12 +1,22 @@
 import styled from "styled-components";
 
-export const ToDoContainer = styled.div`
+export const ToDoContainer = styled.ul`
    width: 100%;
    padding: 15px;
 
    & .completed {
       position: relative;
       padding: 60px 0 0 0;
+   }
+
+   & .failed li {
+      border: 1px solid #9e0000;
+      background: #ff000030;
+   }
+
+   & .completed li {
+      border: 1px solid green;
+      background: #00800030;
    }
 
    & .failed:empty:after {
